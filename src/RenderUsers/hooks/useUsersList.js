@@ -1,13 +1,12 @@
 import { useEffect, useState } from 'react';
-import { SHORT_USER_LIST } from '../../publicURLs/publicApis/users';
 
-const useUsersList = () => {
+const useUsersList = (URL) => {
   const [users, setUsers] = useState([]);
   const [loading, setLoading] = useState(true);
   
   useEffect(() => {
     const fetchUsers = () => {
-      fetch(SHORT_USER_LIST)
+      fetch(URL)
         .then(res => {
           return res.json();
         })
@@ -23,7 +22,7 @@ const useUsersList = () => {
     };
 
     fetchUsers();
-  }, []);
+  }, [URL]);
 
   return { users, loading };
 };

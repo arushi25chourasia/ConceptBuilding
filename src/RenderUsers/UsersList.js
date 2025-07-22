@@ -6,10 +6,11 @@ import {
   StyleSheet,
   View,
 } from 'react-native';
+import { SHORT_USER_LIST } from '../publicURLs/publicApis/users';
 import useUsersList from './hooks/useUsersList';
 
 function RenderUsers() {
-  const { users, loading } = useUsersList();
+  const { users, loading } = useUsersList(SHORT_USER_LIST);
 
   if (loading) return <ActivityIndicator />;
   if (users.length === 0)
@@ -30,7 +31,7 @@ function RenderUsers() {
 
   return (
     <ScrollView>
-      <Text>Users Fetched</Text>
+      <Text>Short List Fetched</Text>
       {users.map(item => {
         return (
           <View style={styles.nameStyleContainer} key={item.id}>

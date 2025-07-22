@@ -1,11 +1,12 @@
 import { Text, SafeAreaView } from 'react-native';
-import UsersList from './RenderUsers/UsersList';
+import FetchUsers from './RenderUsers/FetchUsers';
 function App() {
 
   return (
     <SafeAreaView>
      <Text>hello World</Text>
-     <UsersList />
+     {/**Lists */}
+     <FetchUsers />         
     </SafeAreaView>
   )
 }
